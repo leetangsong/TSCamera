@@ -1,15 +1,22 @@
 PODS:
-  - TSCamera (0.1.0)
+  - TSCamera (0.0.1):
+    - TSHandyKit (~> 0.0.3)
+  - TSHandyKit (0.0.3)
 
 DEPENDENCIES:
   - TSCamera (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - TSHandyKit
 
 EXTERNAL SOURCES:
   TSCamera:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TSCamera: ab4d1ce3e5f761a07eef83e1cd011c396ac872e7
+  TSCamera: ce6f4d3740fa1a98481e732ac8ce451a73dbdd71
+  TSHandyKit: ceff56228bd888c0a21d2ecace3e2fc0ddb00665
 
 PODFILE CHECKSUM: dd51a0d73e5ece106271a17a4e4cb625768cd35b
 

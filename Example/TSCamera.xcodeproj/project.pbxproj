@@ -14,6 +14,10 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		B5B3981128364CFD00EB3F01 /* TSDeviceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B3980D28364CFD00EB3F01 /* TSDeviceOrientation.swift */; };
+		B5B3981228364CFD00EB3F01 /* TSCameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B3980E28364CFD00EB3F01 /* TSCameraManager.swift */; };
+		B5B3981328364CFD00EB3F01 /* TSCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B3980F28364CFD00EB3F01 /* TSCameraViewController.swift */; };
+		B5B3981428364CFD00EB3F01 /* TSCameraResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5B3981028364CFD00EB3F01 /* TSCameraResource.bundle */; };
 		F53DD5D0298B27352A526EB8 /* Pods_TSCamera_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED47DF5744D6239EA95933B /* Pods_TSCamera_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +49,10 @@
 		724A415ED0043E1E69177330 /* Pods-TSCamera_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSCamera_Example.debug.xcconfig"; path = "Target Support Files/Pods-TSCamera_Example/Pods-TSCamera_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A8B10E01813F1DC2B0A0EBF5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A8DD3F55F41CADB91C8451F5 /* Pods-TSCamera_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSCamera_Example.release.xcconfig"; path = "Target Support Files/Pods-TSCamera_Example/Pods-TSCamera_Example.release.xcconfig"; sourceTree = "<group>"; };
+		B5B3980D28364CFD00EB3F01 /* TSDeviceOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDeviceOrientation.swift; sourceTree = "<group>"; };
+		B5B3980E28364CFD00EB3F01 /* TSCameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCameraManager.swift; sourceTree = "<group>"; };
+		B5B3980F28364CFD00EB3F01 /* TSCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCameraViewController.swift; sourceTree = "<group>"; };
+		B5B3981028364CFD00EB3F01 /* TSCameraResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TSCameraResource.bundle; sourceTree = "<group>"; };
 		D394C71D2FF71345D2C19D16 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E0D570D259A0CC3D3011BA17 /* Pods-TSCamera_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSCamera_Tests.debug.xcconfig"; path = "Target Support Files/Pods-TSCamera_Tests/Pods-TSCamera_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +114,10 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				B5B3980F28364CFD00EB3F01 /* TSCameraViewController.swift */,
+				B5B3980E28364CFD00EB3F01 /* TSCameraManager.swift */,
+				B5B3980D28364CFD00EB3F01 /* TSDeviceOrientation.swift */,
+				B5B3981028364CFD00EB3F01 /* TSCameraResource.bundle */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -249,6 +261,7 @@
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				B5B3981428364CFD00EB3F01 /* TSCameraResource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,10 +327,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TSCamera_Example/Pods-TSCamera_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/TSCamera/TSCamera.framework",
+				"${BUILT_PRODUCTS_DIR}/TSHandyKit/TSHandyKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TSCamera.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TSHandyKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -331,8 +346,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5B3981128364CFD00EB3F01 /* TSDeviceOrientation.swift in Sources */,
+				B5B3981328364CFD00EB3F01 /* TSCameraViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				B5B3981228364CFD00EB3F01 /* TSCameraManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

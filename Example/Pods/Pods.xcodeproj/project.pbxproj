@@ -7,85 +7,146 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1087C22A570260F93E13EAEA421F28C5 /* Pods-TSCamera_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00FD60A28180E0A55D1303FE912A1845 /* Pods-TSCamera_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13548A27046C140133C6764D490A9700 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6822E84B200F3D03BE6817B6EBB45A /* DictionaryExtensions.swift */; };
+		18058223D658BBD1380309BB41EF583F /* Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7E1083A1B2526670E770F52C3284F /* Swizzling.swift */; };
 		1F248E58FE7C803C1FDE1F871EA46132 /* Pods-TSCamera_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E5271B3CAD3833A55A9BBEA9D7964080 /* Pods-TSCamera_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A87F6BD70777500C8D8EAC28F0B2B64 /* TSCamera-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE4CF0E16D6BB81212C51D061A93B7 /* TSCamera-dummy.m */; };
-		40CAC1E1DF479C44EBB1D5C0EFBC6941 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C268C1BCDA928C3AE9C69A15626F553E /* ReplaceMe.swift */; };
+		24D4E2DC22A1FC45945E3001A97A6672 /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8314FF8F69515B1AF2ED348D75F760EE /* BundleExtensions.swift */; };
+		2ED6D83DBACC5D7AD42D8EACD376516C /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4017DE89FDC62A6D4B1AF38FEF773B3A /* ArrayExtensions.swift */; };
+		38FF2AC956293A3295980FEF2F4DC92F /* TimerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CFE7BC32BF530603210CA8529B7458 /* TimerExtensions.swift */; };
+		5CE21EEF208CAE51ECC58A68F56CCCE1 /* TSCamera-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE4CF0E16D6BB81212C51D061A93B7 /* TSCamera-dummy.m */; };
+		5F9DE4FC74AD964C5D7F2A43BD77387A /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C268C1BCDA928C3AE9C69A15626F553E /* ReplaceMe.swift */; };
+		5FBD51953661120BFDE325E5935A0229 /* TSHandyKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7C66EC42C44EB9D27D23A456571B39 /* TSHandyKit-dummy.m */; };
+		612C2A13E1D848E8D97BDE5FA28AA0C6 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5520B27AD0BD6C1D7F01B5BCB42467 /* UIButtonExtensions.swift */; };
 		666515D96C6CB377B2936BE26C3F25C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		935976917F227AB9827BEF0687BBFA21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		B674DD7C27F86D99BD824DFCD4DD6998 /* Pods-TSCamera_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0B8C19B300940E1F7CE6AFBC4A0334 /* Pods-TSCamera_Example-dummy.m */; };
+		82F8F7B66117E43FDEE22DFC53ABD9AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		884600E57B370AD9C3C3F82F8683AC5E /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6184339BB396393D0A50862CD72D72E /* UIImageExtensions.swift */; };
+		91921C43E8CD8575FFBF7F38A5CAF4A6 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6EC638CB5EB68D330788D52D7FE81 /* UIViewExtensions.swift */; };
+		93C1AF517F100A13C99528D72639200C /* TSHandyKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63ECD792EE92BE23B356C14DEF9CAD00 /* TSHandyKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0E49BE7BE866FC2465F4F6679AC3A43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		A2B6780BD1AD3C4FF918C214E195138A /* Pods-TSCamera_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0B8C19B300940E1F7CE6AFBC4A0334 /* Pods-TSCamera_Example-dummy.m */; };
+		AB4C7B5A3B51B7136675554C0CC8DD71 /* TSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7086421BB7C8E6B62E7E87183E3B8487 /* TSApp.swift */; };
+		ABDD67A5FA56A7FF327A5F0690EBDF83 /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252C7D414AC2F9FCB1A77510C43A62AF /* UIControlExtensions.swift */; };
+		B2C77920E6831F2B4DB597F2AA490712 /* TSCamera-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 89A4908F5CA705A54A488917E78B0734 /* TSCamera-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C83A69A4F8D9A726918CAB36D876A098 /* Pods-TSCamera_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C82E2F8108EDBA33056AE3BB39A6CD10 /* Pods-TSCamera_Tests-dummy.m */; };
-		F9D5E225E47661F7F559B5A61796346E /* TSCamera-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 89A4908F5CA705A54A488917E78B0734 /* TSCamera-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FF93DD9A476DF808016A7D6A6B1E8755 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		CF263CC490B58313CF8AB30733E2EFF6 /* Pods-TSCamera_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00FD60A28180E0A55D1303FE912A1845 /* Pods-TSCamera_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0BF009476257D9563CFB388DDA30F3B /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD92E9020CE9204D46074155D7E9ED06 /* StringExtensions.swift */; };
+		D108CDDBB0026E92AA12C1B5A0667098 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		EB6BA25F92BADFB3EE5E44A48D573926 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07D27B9285073E542862F07A9A4974 /* UIColorExtensions.swift */; };
+		F03FED6AF9B203A1D42803D4938B86B5 /* TSKitWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBC368BBA9DA5D4F9054505374A682 /* TSKitWrapper.swift */; };
+		FBE0183BDDE57178D8BCD67DA9342FE1 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3155544A07994CA8C1523E04FE0B04 /* DateExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2927A077D332EBBB8A64B2816E084919 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 40171102EF2B0EC504479E422A686456;
-			remoteInfo = TSCamera;
-		};
-		73908418CFFA716D03EFB3FFAED7A987 /* PBXContainerItemProxy */ = {
+		2703E5F55C6CBFFB532E66E6FF8A1DB2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8CC64BD4B1AC54983D52C2D6A70C05B3;
 			remoteInfo = "Pods-TSCamera_Example";
 		};
+		72EEF9B8BFB76F9DF74BED0EEF3B4CF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FE768FA5DDFB1172D0150E67D8F46F0;
+			remoteInfo = TSHandyKit;
+		};
+		794414DB35FC513BC0775C92EA1353AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40171102EF2B0EC504479E422A686456;
+			remoteInfo = TSCamera;
+		};
+		F1207F0169DE4718C5009F9919D17E10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FE768FA5DDFB1172D0150E67D8F46F0;
+			remoteInfo = TSHandyKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		00FD60A28180E0A55D1303FE912A1845 /* Pods-TSCamera_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TSCamera_Example-umbrella.h"; sourceTree = "<group>"; };
+		01CFE7BC32BF530603210CA8529B7458 /* TimerExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimerExtensions.swift; path = TSHandyKit/Classes/TimerExtensions.swift; sourceTree = "<group>"; };
+		14E6EC638CB5EB68D330788D52D7FE81 /* UIViewExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewExtensions.swift; path = TSHandyKit/Classes/UIViewExtensions.swift; sourceTree = "<group>"; };
 		1FC333682B317200E3237F244F890F13 /* Pods-TSCamera_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSCamera_Example-Info.plist"; sourceTree = "<group>"; };
 		249C6D88A73896332E0FB9740C0B6831 /* TSCamera-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TSCamera-Info.plist"; sourceTree = "<group>"; };
+		252C7D414AC2F9FCB1A77510C43A62AF /* UIControlExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIControlExtensions.swift; path = TSHandyKit/Classes/UIControlExtensions.swift; sourceTree = "<group>"; };
 		2C2498CFACB5AED11260CBB0C71C0D2A /* Pods-TSCamera_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TSCamera_Tests"; path = Pods_TSCamera_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF621168CADD46D6BFB1CDD82524BE2 /* Pods-TSCamera_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSCamera_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		4017DE89FDC62A6D4B1AF38FEF773B3A /* ArrayExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArrayExtensions.swift; path = TSHandyKit/Classes/ArrayExtensions.swift; sourceTree = "<group>"; };
 		5068FF0A358AC1898B291FA326444E2A /* TSCamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSCamera.debug.xcconfig; sourceTree = "<group>"; };
 		58937FCD7E3F875FD505E4DBDDF05DAC /* TSCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSCamera.release.xcconfig; sourceTree = "<group>"; };
 		5BEA83630F0B77A42968F7EB69A8A7C8 /* Pods-TSCamera_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TSCamera_Example-frameworks.sh"; sourceTree = "<group>"; };
 		634735016DCD08B3ABEE5F9439A48059 /* Pods-TSCamera_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSCamera_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		63ECD792EE92BE23B356C14DEF9CAD00 /* TSHandyKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSHandyKit-umbrella.h"; sourceTree = "<group>"; };
+		6440350DDE8EEEA9907A3B92EBE7FE33 /* TSHandyKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TSHandyKit; path = TSHandyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		690C4A15BC8C2FFAAE473CFCE06C5309 /* TSCamera-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSCamera-prefix.pch"; sourceTree = "<group>"; };
+		6E3155544A07994CA8C1523E04FE0B04 /* DateExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = TSHandyKit/Classes/DateExtensions.swift; sourceTree = "<group>"; };
+		7086421BB7C8E6B62E7E87183E3B8487 /* TSApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TSApp.swift; path = TSHandyKit/Classes/TSApp.swift; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		750997116317B310D4B6D62FEA53E3F9 /* Pods-TSCamera_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSCamera_Tests-Info.plist"; sourceTree = "<group>"; };
 		77C42E02737DC573CFC36105A6698891 /* Pods-TSCamera_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSCamera_Example.release.xcconfig"; sourceTree = "<group>"; };
+		7D6822E84B200F3D03BE6817B6EBB45A /* DictionaryExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DictionaryExtensions.swift; path = TSHandyKit/Classes/DictionaryExtensions.swift; sourceTree = "<group>"; };
+		8314FF8F69515B1AF2ED348D75F760EE /* BundleExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BundleExtensions.swift; path = TSHandyKit/Classes/BundleExtensions.swift; sourceTree = "<group>"; };
+		85F503351EF2646213836E00FA3D5EC0 /* TSHandyKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSHandyKit.release.xcconfig; sourceTree = "<group>"; };
 		870AD3DAE82F09D36E65A7B1A0EB9C23 /* Pods-TSCamera_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TSCamera_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8743019841A5F1D9DD6617C73ECB4BC8 /* Pods-TSCamera_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSCamera_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		894AE84884697BDD366F8CDA884A0FA8 /* Pods-TSCamera_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSCamera_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		89A4908F5CA705A54A488917E78B0734 /* TSCamera-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSCamera-umbrella.h"; sourceTree = "<group>"; };
 		8B8DE609C5321286FCE82DC766B8EF05 /* Pods-TSCamera_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TSCamera_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8C19C2D57972E9BCD2B25210621FA35C /* Pods-TSCamera_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSCamera_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		952DAF78CEC425C2ABD3F08D8D9CDEF9 /* TSHandyKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSHandyKit.debug.xcconfig; sourceTree = "<group>"; };
 		9ABE4CF0E16D6BB81212C51D061A93B7 /* TSCamera-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TSCamera-dummy.m"; sourceTree = "<group>"; };
+		9C5520B27AD0BD6C1D7F01B5BCB42467 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIButtonExtensions.swift; path = TSHandyKit/Classes/UIButtonExtensions.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E3CAFB8097D8776DD8FEAE0045923D0 /* TSHandyKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TSHandyKit-Info.plist"; sourceTree = "<group>"; };
 		A0F6576CAA97183BAD252D287BBC9E53 /* Pods-TSCamera_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TSCamera_Example.modulemap"; sourceTree = "<group>"; };
 		A18DB56C2D9AFFD79D82147075E645F4 /* TSCamera.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TSCamera.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A50B86969C3C78FC544937899D2DD3BE /* TSCamera.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TSCamera.modulemap; sourceTree = "<group>"; };
+		AF7C66EC42C44EB9D27D23A456571B39 /* TSHandyKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TSHandyKit-dummy.m"; sourceTree = "<group>"; };
 		B8A8BA8947EDC77022CBBA4E683E6434 /* Pods-TSCamera_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TSCamera_Example"; path = Pods_TSCamera_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9D7E1083A1B2526670E770F52C3284F /* Swizzling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swizzling.swift; path = TSHandyKit/Classes/Swizzling.swift; sourceTree = "<group>"; };
 		BCCCAD59AD6752F99311896AC86978D8 /* TSCamera */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TSCamera; path = TSCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD987975B5F1E8765CE48AF058784903 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		C268C1BCDA928C3AE9C69A15626F553E /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = TSCamera/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
+		C306EA11535347111D768C23203A2794 /* TSHandyKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TSHandyKit.modulemap; sourceTree = "<group>"; };
+		C6184339BB396393D0A50862CD72D72E /* UIImageExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIImageExtensions.swift; path = TSHandyKit/Classes/UIImageExtensions.swift; sourceTree = "<group>"; };
 		C82E2F8108EDBA33056AE3BB39A6CD10 /* Pods-TSCamera_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TSCamera_Tests-dummy.m"; sourceTree = "<group>"; };
 		CEE8A629CBE4C52EBE1553E1072299F6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		D33F689B716C8D2A7A8A268664365634 /* Pods-TSCamera_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TSCamera_Tests.modulemap"; sourceTree = "<group>"; };
+		DCCBC368BBA9DA5D4F9054505374A682 /* TSKitWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TSKitWrapper.swift; path = TSHandyKit/Classes/TSKitWrapper.swift; sourceTree = "<group>"; };
+		DD92E9020CE9204D46074155D7E9ED06 /* StringExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = TSHandyKit/Classes/StringExtensions.swift; sourceTree = "<group>"; };
 		DE0B8C19B300940E1F7CE6AFBC4A0334 /* Pods-TSCamera_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TSCamera_Example-dummy.m"; sourceTree = "<group>"; };
 		E5271B3CAD3833A55A9BBEA9D7964080 /* Pods-TSCamera_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TSCamera_Tests-umbrella.h"; sourceTree = "<group>"; };
+		FA07D27B9285073E542862F07A9A4974 /* UIColorExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColorExtensions.swift; path = TSHandyKit/Classes/UIColorExtensions.swift; sourceTree = "<group>"; };
+		FCB48AF2C37785CB59016949474BF436 /* TSHandyKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSHandyKit-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		480348C5963C51028F1018EFF591090F /* Frameworks */ = {
+		3883F4972863B6EC90379A25308AEDBB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				935976917F227AB9827BEF0687BBFA21 /* Foundation.framework in Frameworks */,
+				82F8F7B66117E43FDEE22DFC53ABD9AB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4DFBE0C80B6E37592BCE8C5514CA2E62 /* Frameworks */ = {
+		A1DD72FC67D1828EDAF9CA4B66C7266D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF93DD9A476DF808016A7D6A6B1E8755 /* Foundation.framework in Frameworks */,
+				A0E49BE7BE866FC2465F4F6679AC3A43 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0144E59BE0C0AAF3EBF480F3F82605F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D108CDDBB0026E92AA12C1B5A0667098 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +161,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		158C450C063D426968EDBA95D72EF9F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEF9834E7B354AA9D99E2EFFFE93628F /* TSHandyKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		392E73E568EECB09083BFD7977430709 /* Pods-TSCamera_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +238,21 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		8B78EFB42E46A00D5CB49A7BB54F3563 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C306EA11535347111D768C23203A2794 /* TSHandyKit.modulemap */,
+				AF7C66EC42C44EB9D27D23A456571B39 /* TSHandyKit-dummy.m */,
+				9E3CAFB8097D8776DD8FEAE0045923D0 /* TSHandyKit-Info.plist */,
+				FCB48AF2C37785CB59016949474BF436 /* TSHandyKit-prefix.pch */,
+				63ECD792EE92BE23B356C14DEF9CAD00 /* TSHandyKit-umbrella.h */,
+				952DAF78CEC425C2ABD3F08D8D9CDEF9 /* TSHandyKit.debug.xcconfig */,
+				85F503351EF2646213836E00FA3D5EC0 /* TSHandyKit.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TSHandyKit";
+			sourceTree = "<group>";
+		};
 		AFC8F222479F2B4F3CEEBB734E57C31D /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,14 +262,38 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B9B3BC9150705861CE2C0C490B1959E7 /* Products */ = {
+		B2D1F8C00D07FF017A20A67913C4315B /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				B8A8BA8947EDC77022CBBA4E683E6434 /* Pods-TSCamera_Example */,
 				2C2498CFACB5AED11260CBB0C71C0D2A /* Pods-TSCamera_Tests */,
 				BCCCAD59AD6752F99311896AC86978D8 /* TSCamera */,
+				6440350DDE8EEEA9907A3B92EBE7FE33 /* TSHandyKit */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CEF9834E7B354AA9D99E2EFFFE93628F /* TSHandyKit */ = {
+			isa = PBXGroup;
+			children = (
+				4017DE89FDC62A6D4B1AF38FEF773B3A /* ArrayExtensions.swift */,
+				8314FF8F69515B1AF2ED348D75F760EE /* BundleExtensions.swift */,
+				6E3155544A07994CA8C1523E04FE0B04 /* DateExtensions.swift */,
+				7D6822E84B200F3D03BE6817B6EBB45A /* DictionaryExtensions.swift */,
+				DD92E9020CE9204D46074155D7E9ED06 /* StringExtensions.swift */,
+				B9D7E1083A1B2526670E770F52C3284F /* Swizzling.swift */,
+				01CFE7BC32BF530603210CA8529B7458 /* TimerExtensions.swift */,
+				7086421BB7C8E6B62E7E87183E3B8487 /* TSApp.swift */,
+				DCCBC368BBA9DA5D4F9054505374A682 /* TSKitWrapper.swift */,
+				9C5520B27AD0BD6C1D7F01B5BCB42467 /* UIButtonExtensions.swift */,
+				FA07D27B9285073E542862F07A9A4974 /* UIColorExtensions.swift */,
+				252C7D414AC2F9FCB1A77510C43A62AF /* UIControlExtensions.swift */,
+				C6184339BB396393D0A50862CD72D72E /* UIImageExtensions.swift */,
+				14E6EC638CB5EB68D330788D52D7FE81 /* UIViewExtensions.swift */,
+				8B78EFB42E46A00D5CB49A7BB54F3563 /* Support Files */,
+			);
+			name = TSHandyKit;
+			path = TSHandyKit;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -194,7 +302,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				76FC065582C5A798D8D9B257CB41E0E3 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				B9B3BC9150705861CE2C0C490B1959E7 /* Products */,
+				158C450C063D426968EDBA95D72EF9F0 /* Pods */,
+				B2D1F8C00D07FF017A20A67913C4315B /* Products */,
 				AFC8F222479F2B4F3CEEBB734E57C31D /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -226,22 +335,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		211A0552E9628956C45839CD37C868FD /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1087C22A570260F93E13EAEA421F28C5 /* Pods-TSCamera_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		48393931CCF173A5D9E700987D6EA455 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F9D5E225E47661F7F559B5A61796346E /* TSCamera-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5771C5EE80301DA7AAE87C8FB148087B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,21 +343,64 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		58544E13C6B0CD576941734C54AF59E1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF263CC490B58313CF8AB30733E2EFF6 /* Pods-TSCamera_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92CBDB60CCB439E15770710CFC9F3C52 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93C1AF517F100A13C99528D72639200C /* TSHandyKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		957737214416B24AC259D5CDE1F6AE32 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2C77920E6831F2B4DB597F2AA490712 /* TSCamera-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		40171102EF2B0EC504479E422A686456 /* TSCamera */ = {
+		3FE768FA5DDFB1172D0150E67D8F46F0 /* TSHandyKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC7DB7E8EC5A47D766A2829ECECF1B44 /* Build configuration list for PBXNativeTarget "TSCamera" */;
+			buildConfigurationList = 95B11FBCE8F3721AA4FF62E02AF39981 /* Build configuration list for PBXNativeTarget "TSHandyKit" */;
 			buildPhases = (
-				48393931CCF173A5D9E700987D6EA455 /* Headers */,
-				CFE66D629CC07CE638955E6829B22487 /* Sources */,
-				4DFBE0C80B6E37592BCE8C5514CA2E62 /* Frameworks */,
-				55969DD92AED24F1A5412F7AA3E7932D /* Resources */,
+				92CBDB60CCB439E15770710CFC9F3C52 /* Headers */,
+				D21386F790FCD59A7C2B53F43F8BF92A /* Sources */,
+				3883F4972863B6EC90379A25308AEDBB /* Frameworks */,
+				C5394F9C573EB1B24D3A826EE449089F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = TSHandyKit;
+			productName = TSHandyKit;
+			productReference = 6440350DDE8EEEA9907A3B92EBE7FE33 /* TSHandyKit */;
+			productType = "com.apple.product-type.framework";
+		};
+		40171102EF2B0EC504479E422A686456 /* TSCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEBAF09B33B6034D131C78FC4A0E2C21 /* Build configuration list for PBXNativeTarget "TSCamera" */;
+			buildPhases = (
+				957737214416B24AC259D5CDE1F6AE32 /* Headers */,
+				9ECF12625839B301C539300534F2E6A1 /* Sources */,
+				D0144E59BE0C0AAF3EBF480F3F82605F /* Frameworks */,
+				1E8A090BAE5FC4C18127EF1ADCC5C346 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FE30A1B2C7A1564DF9F8C2A914F3979 /* PBXTargetDependency */,
 			);
 			name = TSCamera;
 			productName = TSCamera;
@@ -273,17 +409,18 @@
 		};
 		8CC64BD4B1AC54983D52C2D6A70C05B3 /* Pods-TSCamera_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8543327DB5DC21A7524A3124ED95087B /* Build configuration list for PBXNativeTarget "Pods-TSCamera_Example" */;
+			buildConfigurationList = DBD303BB68060518E2358B5CA7AE4A12 /* Build configuration list for PBXNativeTarget "Pods-TSCamera_Example" */;
 			buildPhases = (
-				211A0552E9628956C45839CD37C868FD /* Headers */,
-				08B00A49EEE06366C9DF5C06EA5B898A /* Sources */,
-				480348C5963C51028F1018EFF591090F /* Frameworks */,
-				FF111A38C7257883144F24FB936054AD /* Resources */,
+				58544E13C6B0CD576941734C54AF59E1 /* Headers */,
+				4362D9F203C16FDCD9A57675F4B518D7 /* Sources */,
+				A1DD72FC67D1828EDAF9CA4B66C7266D /* Frameworks */,
+				613835DBC405AABEA5E127E790CB04C6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B4190F50F46C583F6BECD223F089ADDD /* PBXTargetDependency */,
+				0C753519D131CFFACAB46DA410454CBD /* PBXTargetDependency */,
+				C464A055CD6B7C5FFE289575F6A5E44D /* PBXTargetDependency */,
 			);
 			name = "Pods-TSCamera_Example";
 			productName = Pods_TSCamera_Example;
@@ -302,7 +439,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				835DD5F76CAE52021940EFEA92461919 /* PBXTargetDependency */,
+				4BA0C0ABFCF02A0C535147F6AE5CD86E /* PBXTargetDependency */,
 			);
 			name = "Pods-TSCamera_Tests";
 			productName = Pods_TSCamera_Tests;
@@ -327,19 +464,34 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = B9B3BC9150705861CE2C0C490B1959E7 /* Products */;
+			productRefGroup = B2D1F8C00D07FF017A20A67913C4315B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8CC64BD4B1AC54983D52C2D6A70C05B3 /* Pods-TSCamera_Example */,
 				E478D803060528E714E699F715C05CDE /* Pods-TSCamera_Tests */,
 				40171102EF2B0EC504479E422A686456 /* TSCamera */,
+				3FE768FA5DDFB1172D0150E67D8F46F0 /* TSHandyKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		55969DD92AED24F1A5412F7AA3E7932D /* Resources */ = {
+		1E8A090BAE5FC4C18127EF1ADCC5C346 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		613835DBC405AABEA5E127E790CB04C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5394F9C573EB1B24D3A826EE449089F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -353,24 +505,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FF111A38C7257883144F24FB936054AD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		08B00A49EEE06366C9DF5C06EA5B898A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B674DD7C27F86D99BD824DFCD4DD6998 /* Pods-TSCamera_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13AEF2437BFABFAEB86291A4D2F2156D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -379,34 +516,76 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CFE66D629CC07CE638955E6829B22487 /* Sources */ = {
+		4362D9F203C16FDCD9A57675F4B518D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40CAC1E1DF479C44EBB1D5C0EFBC6941 /* ReplaceMe.swift in Sources */,
-				3A87F6BD70777500C8D8EAC28F0B2B64 /* TSCamera-dummy.m in Sources */,
+				A2B6780BD1AD3C4FF918C214E195138A /* Pods-TSCamera_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ECF12625839B301C539300534F2E6A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F9DE4FC74AD964C5D7F2A43BD77387A /* ReplaceMe.swift in Sources */,
+				5CE21EEF208CAE51ECC58A68F56CCCE1 /* TSCamera-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D21386F790FCD59A7C2B53F43F8BF92A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2ED6D83DBACC5D7AD42D8EACD376516C /* ArrayExtensions.swift in Sources */,
+				24D4E2DC22A1FC45945E3001A97A6672 /* BundleExtensions.swift in Sources */,
+				FBE0183BDDE57178D8BCD67DA9342FE1 /* DateExtensions.swift in Sources */,
+				13548A27046C140133C6764D490A9700 /* DictionaryExtensions.swift in Sources */,
+				D0BF009476257D9563CFB388DDA30F3B /* StringExtensions.swift in Sources */,
+				18058223D658BBD1380309BB41EF583F /* Swizzling.swift in Sources */,
+				38FF2AC956293A3295980FEF2F4DC92F /* TimerExtensions.swift in Sources */,
+				AB4C7B5A3B51B7136675554C0CC8DD71 /* TSApp.swift in Sources */,
+				5FBD51953661120BFDE325E5935A0229 /* TSHandyKit-dummy.m in Sources */,
+				F03FED6AF9B203A1D42803D4938B86B5 /* TSKitWrapper.swift in Sources */,
+				612C2A13E1D848E8D97BDE5FA28AA0C6 /* UIButtonExtensions.swift in Sources */,
+				EB6BA25F92BADFB3EE5E44A48D573926 /* UIColorExtensions.swift in Sources */,
+				ABDD67A5FA56A7FF327A5F0690EBDF83 /* UIControlExtensions.swift in Sources */,
+				884600E57B370AD9C3C3F82F8683AC5E /* UIImageExtensions.swift in Sources */,
+				91921C43E8CD8575FFBF7F38A5CAF4A6 /* UIViewExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		835DD5F76CAE52021940EFEA92461919 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-TSCamera_Example";
-			target = 8CC64BD4B1AC54983D52C2D6A70C05B3 /* Pods-TSCamera_Example */;
-			targetProxy = 73908418CFFA716D03EFB3FFAED7A987 /* PBXContainerItemProxy */;
-		};
-		B4190F50F46C583F6BECD223F089ADDD /* PBXTargetDependency */ = {
+		0C753519D131CFFACAB46DA410454CBD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TSCamera;
 			target = 40171102EF2B0EC504479E422A686456 /* TSCamera */;
-			targetProxy = 2927A077D332EBBB8A64B2816E084919 /* PBXContainerItemProxy */;
+			targetProxy = 794414DB35FC513BC0775C92EA1353AC /* PBXContainerItemProxy */;
+		};
+		4BA0C0ABFCF02A0C535147F6AE5CD86E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-TSCamera_Example";
+			target = 8CC64BD4B1AC54983D52C2D6A70C05B3 /* Pods-TSCamera_Example */;
+			targetProxy = 2703E5F55C6CBFFB532E66E6FF8A1DB2 /* PBXContainerItemProxy */;
+		};
+		5FE30A1B2C7A1564DF9F8C2A914F3979 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TSHandyKit;
+			target = 3FE768FA5DDFB1172D0150E67D8F46F0 /* TSHandyKit */;
+			targetProxy = F1207F0169DE4718C5009F9919D17E10 /* PBXContainerItemProxy */;
+		};
+		C464A055CD6B7C5FFE289575F6A5E44D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TSHandyKit;
+			target = 3FE768FA5DDFB1172D0150E67D8F46F0 /* TSHandyKit */;
+			targetProxy = 72EEF9B8BFB76F9DF74BED0EEF3B4CF0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		171AB65B05CFCF37056A57521A8A0C47 /* Debug */ = {
+		1016242BE21059FF7B68FE1EBFA879EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5068FF0A358AC1898B291FA326444E2A /* TSCamera.debug.xcconfig */;
 			buildSettings = {
@@ -502,6 +681,38 @@
 			};
 			name = Debug;
 		};
+		43B127472FF146962C4B2F11FF0BD082 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C19C2D57972E9BCD2B25210621FA35C /* Pods-TSCamera_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TSCamera_Example/Pods-TSCamera_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TSCamera_Example/Pods-TSCamera_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		4A63D0F2774ABED0F969FC6A32BED9CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 894AE84884697BDD366F8CDA884A0FA8 /* Pods-TSCamera_Tests.debug.xcconfig */;
@@ -534,11 +745,10 @@
 			};
 			name = Debug;
 		};
-		962400C3BD8429EB7F822C6D677DDDCF /* Release */ = {
+		8A9B0E4F04D8D96CABF48593F1928C34 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77C42E02737DC573CFC36105A6698891 /* Pods-TSCamera_Example.release.xcconfig */;
+			baseConfigurationReference = 85F503351EF2646213836E00FA3D5EC0 /* TSHandyKit.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -547,19 +757,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TSCamera_Example/Pods-TSCamera_Example-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/TSHandyKit/TSHandyKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TSHandyKit/TSHandyKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TSCamera_Example/Pods-TSCamera_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/TSHandyKit/TSHandyKit.modulemap";
+				PRODUCT_MODULE_NAME = TSHandyKit;
+				PRODUCT_NAME = TSHandyKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -567,11 +776,10 @@
 			};
 			name = Release;
 		};
-		B695C0A1CE42425C86B8EE707FF8FEAD /* Debug */ = {
+		B2A058899355671534B9BC1D6C054C62 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C19C2D57972E9BCD2B25210621FA35C /* Pods-TSCamera_Example.debug.xcconfig */;
+			baseConfigurationReference = 58937FCD7E3F875FD505E4DBDDF05DAC /* TSCamera.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -580,19 +788,49 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TSCamera_Example/Pods-TSCamera_Example-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/TSCamera/TSCamera-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TSCamera/TSCamera-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TSCamera_Example/Pods-TSCamera_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/TSCamera/TSCamera.modulemap";
+				PRODUCT_MODULE_NAME = TSCamera;
+				PRODUCT_NAME = TSCamera;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B416D9B47541F1B9EA4484AD9FA09178 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 952DAF78CEC425C2ABD3F08D8D9CDEF9 /* TSHandyKit.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TSHandyKit/TSHandyKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TSHandyKit/TSHandyKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TSHandyKit/TSHandyKit.modulemap";
+				PRODUCT_MODULE_NAME = TSHandyKit;
+				PRODUCT_NAME = TSHandyKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -661,10 +899,11 @@
 			};
 			name = Release;
 		};
-		E12B7795B2A4F98B62A11FAE1228E87A /* Release */ = {
+		E530F0788563772FF8A2DA3553BE08C1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58937FCD7E3F875FD505E4DBDDF05DAC /* TSCamera.release.xcconfig */;
+			baseConfigurationReference = 77C42E02737DC573CFC36105A6698891 /* Pods-TSCamera_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -673,18 +912,19 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TSCamera/TSCamera-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TSCamera/TSCamera-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TSCamera_Example/Pods-TSCamera_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TSCamera/TSCamera.modulemap";
-				PRODUCT_MODULE_NAME = TSCamera;
-				PRODUCT_NAME = TSCamera;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TSCamera_Example/Pods-TSCamera_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -746,20 +986,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8543327DB5DC21A7524A3124ED95087B /* Build configuration list for PBXNativeTarget "Pods-TSCamera_Example" */ = {
+		95B11FBCE8F3721AA4FF62E02AF39981 /* Build configuration list for PBXNativeTarget "TSHandyKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B695C0A1CE42425C86B8EE707FF8FEAD /* Debug */,
-				962400C3BD8429EB7F822C6D677DDDCF /* Release */,
+				B416D9B47541F1B9EA4484AD9FA09178 /* Debug */,
+				8A9B0E4F04D8D96CABF48593F1928C34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC7DB7E8EC5A47D766A2829ECECF1B44 /* Build configuration list for PBXNativeTarget "TSCamera" */ = {
+		AEBAF09B33B6034D131C78FC4A0E2C21 /* Build configuration list for PBXNativeTarget "TSCamera" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				171AB65B05CFCF37056A57521A8A0C47 /* Debug */,
-				E12B7795B2A4F98B62A11FAE1228E87A /* Release */,
+				1016242BE21059FF7B68FE1EBFA879EE /* Debug */,
+				B2A058899355671534B9BC1D6C054C62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBD303BB68060518E2358B5CA7AE4A12 /* Build configuration list for PBXNativeTarget "Pods-TSCamera_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43B127472FF146962C4B2F11FF0BD082 /* Debug */,
+				E530F0788563772FF8A2DA3553BE08C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
