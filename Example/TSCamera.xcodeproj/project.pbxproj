@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		21FEE41DFD49FF3D83190EB9 /* Pods_TSCamera_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TSCamera_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4288D4912EB4CB4F662E29E8 /* Pods-TSCamera_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSCamera_Tests.release.xcconfig"; path = "Target Support Files/Pods-TSCamera_Tests/Pods-TSCamera_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		4EB933E265CAA91E2C455698 /* TSCamera.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = TSCamera.podspec; path = ../TSCamera.podspec; sourceTree = "<group>"; };
+		4EB933E265CAA91E2C455698 /* TSCamera.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TSCamera.podspec; path = ../TSCamera.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		607FACD01AFB9204008FA782 /* TSCamera_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSCamera_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,9 +43,9 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6ED47DF5744D6239EA95933B /* Pods_TSCamera_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TSCamera_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		724A415ED0043E1E69177330 /* Pods-TSCamera_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSCamera_Example.debug.xcconfig"; path = "Target Support Files/Pods-TSCamera_Example/Pods-TSCamera_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		A8B10E01813F1DC2B0A0EBF5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		A8B10E01813F1DC2B0A0EBF5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A8DD3F55F41CADB91C8451F5 /* Pods-TSCamera_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSCamera_Example.release.xcconfig"; path = "Target Support Files/Pods-TSCamera_Example/Pods-TSCamera_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D394C71D2FF71345D2C19D16 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D394C71D2FF71345D2C19D16 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E0D570D259A0CC3D3011BA17 /* Pods-TSCamera_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSCamera_Tests.debug.xcconfig"; path = "Target Support Files/Pods-TSCamera_Tests/Pods-TSCamera_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,7 +77,6 @@
 				E0D570D259A0CC3D3011BA17 /* Pods-TSCamera_Tests.debug.xcconfig */,
 				4288D4912EB4CB4F662E29E8 /* Pods-TSCamera_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

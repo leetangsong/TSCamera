@@ -1,0 +1,16 @@
+PODS:
+  - TSCamera (0.1.0)
+
+DEPENDENCIES:
+  - TSCamera (from `../`)
+
+EXTERNAL SOURCES:
+  TSCamera:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TSCamera: ab4d1ce3e5f761a07eef83e1cd011c396ac872e7
+
+PODFILE CHECKSUM: dd51a0d73e5ece106271a17a4e4cb625768cd35b
+
+COCOAPODS: 1.11.2

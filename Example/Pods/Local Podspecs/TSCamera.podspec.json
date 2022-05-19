@@ -1,0 +1,22 @@
+{
+  "name": "TSCamera",
+  "version": "0.1.0",
+  "summary": "A short description of TSCamera.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/leetangsong/TSCamera",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "leetangsong": "leetangsong@icloud.com"
+  },
+  "source": {
+    "git": "https://github.com/leetangsong/TSCamera.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "TSCamera/Classes/**/*"
+}

@@ -1,0 +1,6 @@
+framework module TSCamera {
+  umbrella header "TSCamera-umbrella.h"
+
+  export *
+  module * { export * }
+}
