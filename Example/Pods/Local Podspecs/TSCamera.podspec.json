@@ -21,7 +21,10 @@
   "source_files": "TSCamera/Classes/**/*",
   "dependencies": {
     "TSHandyKit": [
-      "~> 0.0.3"
+      "~> 0.0.4"
+    ],
+    "GPUImage": [
+
     ]
   }
 }

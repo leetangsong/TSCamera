@@ -1,13 +1,16 @@
 PODS:
+  - GPUImage (0.1.7)
   - TSCamera (0.0.1):
-    - TSHandyKit (~> 0.0.3)
-  - TSHandyKit (0.0.3)
+    - GPUImage
+    - TSHandyKit (~> 0.0.4)
+  - TSHandyKit (0.0.4)
 
 DEPENDENCIES:
   - TSCamera (from `../`)
 
 SPEC REPOS:
   trunk:
+    - GPUImage
     - TSHandyKit
 
 EXTERNAL SOURCES:
@@ -15,8 +18,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TSCamera: ce6f4d3740fa1a98481e732ac8ce451a73dbdd71
-  TSHandyKit: ceff56228bd888c0a21d2ecace3e2fc0ddb00665
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  TSCamera: d08be9b2bc03920b9edfe1de3fe002a557432e5a
+  TSHandyKit: 40ccd6bb3c1999545c5aff674678f27d36b09e2f
 
 PODFILE CHECKSUM: dd51a0d73e5ece106271a17a4e4cb625768cd35b
 

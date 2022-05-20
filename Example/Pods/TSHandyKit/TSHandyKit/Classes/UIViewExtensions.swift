@@ -23,6 +23,7 @@ extension TSKitWrapper where Base: UIView {
             frame.size.width = newValue
             base.frame = frame
         }
+        
     }
     public var height: CGFloat{
         get{

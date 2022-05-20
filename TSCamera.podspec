@@ -38,5 +38,6 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-   s.dependency 'TSHandyKit', '~> 0.0.3'
+   s.dependency 'TSHandyKit', '~> 0.0.4'
+   s.dependency 'GPUImage'
 end

@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let manager = TSCameraManager.init(superView: view)
+        manager.startRunning()
         // Do any additional setup after loading the view, typically from a nib.
     }
 

@@ -22,13 +22,23 @@ public protocol TSKitCompatibleValue {}
 
 extension TSKitCompatible {
     public var ts: TSKitWrapper<Self> {
-        return TSKitWrapper(self)
+        get{
+            return TSKitWrapper(self)
+        }
+        set{
+            
+        }
     }
 }
 
 extension TSKitCompatibleValue {
     public var ts: TSKitWrapper<Self> {
-        return TSKitWrapper(self)
+        get{
+            return TSKitWrapper(self)
+        }
+        set{
+            
+        }
     }
 }
 
@@ -45,12 +55,22 @@ public protocol TSKitClassCompatibleValue {}
 
 extension TSKitClassCompatible {
     public static var ts: TSKitClassWrapper<Self>.Type{
-        return  TSKitClassWrapper<Self>.self
+        get{
+            return  TSKitClassWrapper<Self>.self
+        }
+        set{
+            
+        }
     }
 }
 extension TSKitClassCompatibleValue {
     public static var ts: TSKitClassWrapper<Self>.Type{
-        return  TSKitClassWrapper<Self>.self
+        get{
+            return  TSKitClassWrapper<Self>.self
+        }
+        set{
+            
+        }
     }
 }
 
@@ -74,13 +94,23 @@ public protocol TSKitGenericityCompatibleValue {
 
 extension TSKitGenericityCompatible {
     public var ts: TSKitGenericityWrapper<Self, ItemType> {
-        return TSKitGenericityWrapper(self)
+        get{
+            return TSKitGenericityWrapper(self)
+        }
+        set{
+            
+        }
     }
 }
 
 extension TSKitGenericityCompatibleValue {
     public var ts: TSKitGenericityWrapper<Self, ItemType> {
-        return TSKitGenericityWrapper(self)
+        get{
+            return TSKitGenericityWrapper(self)
+        }
+        set{
+            
+        }
     }
 }
 
@@ -100,11 +130,21 @@ public protocol TSKitClassGenericityCompatibleValue {
 
 extension TSKitClassGenericityCompatible {
     public static var ts: TSKitClassGenericityWrapper<Self, ItemType>.Type{
-        return  TSKitClassGenericityWrapper<Self, ItemType>.self
+        get{
+            return  TSKitClassGenericityWrapper<Self, ItemType>.self
+        }
+        set{
+            
+        }
     }
 }
 extension TSKitClassGenericityCompatibleValue {
     public static var ts: TSKitClassGenericityWrapper<Self, ItemType>.Type{
-        return  TSKitClassGenericityWrapper<Self, ItemType>.self
+        get{
+            return  TSKitClassGenericityWrapper<Self, ItemType>.self
+        }
+        set{
+            
+        }
     }
 }
