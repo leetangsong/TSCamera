@@ -292,7 +292,6 @@ public class TSCameraManager: NSObject {
     
     // 切换摄像头
     public func changeCamera() {
-        if isRecording { return }
         let currentPosition = videoInput.device.position
         var toChangePosition = AVCaptureDevice.Position.front
         if currentPosition == .unspecified || currentPosition == .front {

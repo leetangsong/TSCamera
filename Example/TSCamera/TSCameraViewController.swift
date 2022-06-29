@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import TSHandyKit
+import GPUImage
+
 enum TSCameraType {
     case video
     case image
@@ -16,7 +19,7 @@ enum TSCameraType {
 class TSCameraViewController: UIViewController {
    
     // 输入类型
-    var inputType: TSCameraType = .image
+    var inputType: TSCameraType = .imageAndVideo
     // 视频最大秒数
     var videoMaxLength: Double = 10
     //拍完视频或者照片的路径
@@ -26,6 +29,7 @@ class TSCameraViewController: UIViewController {
     var controlView: TSCameraControl!
     lazy var manager: TSCameraManager = TSCameraManager.init(superView: cameraContentView)
     lazy var cameraContentView = UIView()
+    lazy var changeCameraButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,31 +38,73 @@ class TSCameraViewController: UIViewController {
         let contentHeight = min(scale * contentWidth, UIScreen.main.bounds.size.height)
         
         cameraContentView.backgroundColor = UIColor.black
-        cameraContentView.frame = CGRect(x: 0, y: 0, width: contentWidth, height: contentHeight)
-        cameraContentView.center = self.view.center
+        cameraContentView.frame = CGRect(x: 0, y: TSApp.naviBarHeight, width: contentWidth, height: contentHeight)
         view.addSubview(cameraContentView)
         setupView()
     }
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        modalPresentationStyle = .fullScreen
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         manager.startRunning()
         manager.focusAt(cameraContentView.center)
     }
-    
+  
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
     func setupView() {
         view.backgroundColor = UIColor.black
+        
+        changeCameraButton.setImage(UIImage.ts.image(fromCameraResource: "change_camera"), for: .normal)
+        changeCameraButton.frame = CGRect(x: 0, y: TSApp.statusBarHeight, width: 44, height: 44)
+        changeCameraButton.addTarget(self, action: #selector(changeCameraButtonClick), for: .touchUpInside)
+        view.addSubview(changeCameraButton)
+        changeCameraButton.ts.right = 10
         cameraContentView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(focus(_:))))
         cameraContentView.addGestureRecognizer(UIPinchGestureRecognizer.init(target: self, action: #selector(pinch(_:))))
-        controlView = TSCameraControl.init(frame: CGRect(x: 0, y: cameraContentView.ts.height - 150, width: self.view.ts.width, height: 150))
+        controlView = TSCameraControl.init(frame: CGRect(x: 0, y: view.frame.height-18-150, width: self.view.ts.width, height: 150))
         controlView.delegate = self
         controlView.videoLength = self.videoMaxLength
         controlView.inputType = self.inputType
-        cameraContentView.addSubview(controlView)
+        view.addSubview(controlView)
+        
+        let label = UILabel()
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 14)
+        view.addSubview(label)
+        label.isHidden = true
+        if inputType == .video || inputType == .imageAndVideo{
+            if inputType == .video {
+                label.text = "轻触拍照"
+            }else{
+                label.text = "轻触拍照，按住摄像"
+            }
+            label.sizeToFit()
+            label.center = CGPoint.init(x: view.frame.size.width/2, y: controlView.frame.minY)
+            label.layer.shadowColor = UIColor.black.cgColor
+            label.layer.shadowOpacity = 1
+            label.layer.shadowOffset  = CGSize.init(width: 0, height: 1)
+            label.layer.shadowRadius = 3
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.25) {
+                label.isHidden = false
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+                UIView.animate(withDuration: 0.25) {
+                    label.alpha = 0
+                } completion: { _ in
+                    label.removeFromSuperview()
+                }
+            }
+        }
     }
     @objc func focus(_ ges: UITapGestureRecognizer) {
         let focusPoint = ges.location(in: cameraContentView)
@@ -71,6 +117,9 @@ class TSCameraViewController: UIViewController {
             manager.repareForZoom()
         }
         manager.zoom(Double(ges.scale))
+    }
+    @objc func changeCameraButtonClick(){
+        manager.changeCamera()
     }
 }
 
@@ -100,16 +149,9 @@ extension TSCameraViewController: TSCameraControlDelegate {
     }
     
     func cameraControlEndTakeVideo() {
-//        manager.endRecordingVideo { [weak self] (videoUrl) in
-//            guard let `self` = self else { return }
-//            let url = URL.init(fileURLWithPath: videoUrl)
-//            self.type = .video
-//            self.url = videoUrl
-//            self.videoPlayer.isHidden = false
-//            self.videoPlayer.videoUrl = url
-//            self.videoPlayer.play()
-//            self.controlView.showCompleteAnimation()
-//        }
+        manager.endRecordingVideo { [weak self] (videoUrl) in
+           
+        }
     }
     
     func cameraControlDidChangeFocus(focus: Double) {
