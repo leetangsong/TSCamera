@@ -30,17 +30,15 @@ class TSGridMaskLayer: CAShapeLayer{
         let path = CGMutablePath()
         path.addRect(bounds)
         path.addRect(maskRect)
-        removeAnimation(forKey: "MaskLayer_opacityAnimat")
+        removeAnimation(forKey: "MaskLayer_opacityAnimation")
         if animated {
             let animation = CABasicAnimation.init(keyPath: "opacity")
             animation.duration = 1
             animation.fromValue = 0
             animation.toValue = 1
-            self.path = path
-            add(animation, forKey: "MaskLayer_opacityAnimat")
-        }else{
-            self.path = path
+            add(animation, forKey: "MaskLayer_opacityAnimation")
         }
+        self.path = path
     }
     
     
@@ -52,7 +50,61 @@ class TSGridMaskLayer: CAShapeLayer{
 
 /// 网格层
 class TSGridLayer: CAShapeLayer{
+    ///网格区域
+    var gridRect: CGRect = .zero
+    ///网格颜色  默认黑色
+    var gridColor: UIColor = .black
+    ///背景  默认透明
+    var bgColor: UIColor = .clear
     
+    override init() {
+        super.init()
+        contentsScale = UIScreen.main.scale
+        shadowColor = UIColor.black.cgColor
+        shadowRadius = 3
+        shadowOffset = .zero
+        shadowOpacity = 0.5
+    }
+    
+    
+    func setGridRect(_ gridRect: CGRect, animated: Bool){
+        if !gridRect.equalTo(self.gridRect) {
+            self.gridRect = gridRect
+            let path = drawGrid()
+            if animated {
+                let animation = CABasicAnimation.init(keyPath: "path")
+                animation.duration = 1
+                animation.fromValue = self.path
+                animation.toValue = path
+                add(animation, forKey: "gridLayer_contentsRectAnimation")
+            }
+            self.path = path
+        }
+    }
+    
+    func drawGrid() -> CGPath{
+        fillColor = bgColor.cgColor
+        strokeColor = gridColor.cgColor
+        
+        
+        
+        var dWidth = 0
+        for i in 0...3 {
+            
+        }
+        let path = UIBezierPath()
+        ///边框
+        path.move(to: CGPoint.init(x: gridRect.origin.x, y: gridRect.origin.y))
+        path.addLine(to: CGPoint.init(x: gridRect.maxX, y: gridRect.origin.y))
+        path.addLine(to: CGPoint.init(x: gridRect.maxX, y: gridRect.maxY))
+        
+        
+        return path.cgPath
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 
