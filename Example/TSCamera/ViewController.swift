@@ -24,18 +24,11 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let grid = TSGridLayer()
-        grid.frame = view.bounds
-        grid.setGridRect(CGRect.init(x: 100, y: 250, width: 200, height: 200), animated: true)
-        view.layer.addSublayer(grid)
-        view.backgroundColor = .black
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-            grid.setGridRect(CGRect.init(x: 100, y: 300, width: 200, height: 300), animated: true)
-        }
+       
     }
     @objc func click(){
-        self.present(TSCameraViewController(), animated: true, completion: nil)
+        navigationController?.pushViewController(TSImageEditViewController(), animated: true)
+//        self.present(TSCameraViewController(), animated: true, completion: nil)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

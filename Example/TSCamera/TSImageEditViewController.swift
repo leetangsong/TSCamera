@@ -11,8 +11,18 @@ import UIKit
 class TSImageEditViewController: UIViewController {
 
     var image: UIImage!
+    lazy var imageView: UIImageView = UIImageView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
+        view.addSubview(imageView)
+        imageView.frame = view.bounds
+        imageView.image = UIImage.init(named: "test")
+        
+        let gridView = TSGridView.init(frame: view.bounds)
+        gridView.gridRect = CGRect.init(x: 100, y: 150, width: 200, height: 400)
+        view.addSubview(gridView)
+        
         
         // Do any additional setup after loading the view.
     }

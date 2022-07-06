@@ -33,12 +33,15 @@ class TSGridMaskLayer: CAShapeLayer{
         removeAnimation(forKey: "MaskLayer_opacityAnimation")
         if animated {
             let animation = CABasicAnimation.init(keyPath: "opacity")
-            animation.duration = 1
-            animation.fromValue = 0
-            animation.toValue = 1
+            animation.duration = 0.25
+            animation.fromValue = 1
+            animation.toValue = 0
+            self.path = path
             add(animation, forKey: "MaskLayer_opacityAnimation")
+        }else{
+            self.path = path
         }
-        self.path = path
+        
     }
     
     
@@ -183,7 +186,64 @@ class TSGridLayer: CAShapeLayer{
 
 
 
+@objc protocol TSResizeControlDelegate: AnyObject{
+    ///开始调整大小
+    @objc optional func resizeControlDidBeginResizing(_ resizeControl: TSResizeControl)
+    ///正在调整大小
+    @objc optional func resizeControlDidResizing(_ resizeControl: TSResizeControl)
+    ///结束调整大小
+    @objc optional func resizeControlDidEndResizing(_ resizeControl: TSResizeControl)
+}
 
+class TSResizeControl: UIView {
+    weak var delegate: TSResizeControlDelegate?
+    var translation: CGPoint = .zero
+    var startPoint: CGPoint = .zero
+    var isEnabled: Bool = true{
+        didSet{
+            gestureRecognizer.isEnabled = isEnabled
+        }
+    }
+    var gestureRecognizer: UIPanGestureRecognizer!
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .clear
+        gestureRecognizer = UIPanGestureRecognizer.init(target: self, action: #selector(handlePan))
+        addGestureRecognizer(gestureRecognizer)
+    }
+    
+    
+    @objc func handlePan(_ pan: UIPanGestureRecognizer){
+        let translationPoint = pan.translation(in: self.superview)
+        switch pan.state {
+        case .began:
+            startPoint = CGPoint.init(x: round(translationPoint.x), y: translationPoint.y)
+            delegate?.resizeControlDidBeginResizing?(self)
+            break
+        case .changed:
+            translation = CGPoint.init(x: round(startPoint.x + translationPoint.x), y: round(startPoint.y + translationPoint.y))
+            delegate?.resizeControlDidResizing?(self)
+            break
+        case .ended, .cancelled:
+            delegate?.resizeControlDidEndResizing?(self)
+            break
+        default:
+            break
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+
+
+//网格四角和边的 可控范围
+let kTSControlWidth: CGFloat = 30
 
 @objc protocol TSGridViewDelegate: AnyObject{
     ///开始调整大小
@@ -196,7 +256,15 @@ class TSGridLayer: CAShapeLayer{
 
 class TSGridView: UIView {
     ///网格区域
-    var gridRect: CGRect = CGRect.zero
+    var gridRect: CGRect{
+        set{
+            setGridRect(newValue, isMaskLayer: true)
+        }get{
+            return _gridRect
+        }
+
+    }
+    private var _gridRect: CGRect = CGRect.zero
     ///网格 最小尺寸  默认 60x60
     var minGridSize: CGSize = CGSize.init(width: 60, height: 60)
     ///网格最大区域  默认 CGRectInset(self.bounds, 20, 20)
@@ -206,8 +274,161 @@ class TSGridView: UIView {
     
     weak var delegate: TSGridViewDelegate?
     ///显示遮罩层  半透明黑色  默认 YES
-    var showMaskLayer: Bool = true
+    var showMaskLayer: Bool = true{
+        didSet{
+            if oldValue != showMaskLayer {
+                if showMaskLayer {
+                    gridMaskLayer.setMaskRect(gridRect, animated: true)
+                }else{
+                    gridMaskLayer.setMaskRect(gridMaskLayer.bounds, animated: true)
+                }
+            }
+        }
+    }
     /// 是否正在拖动
     var dragging: Bool = false
+    
+    //高亮网格框的初始区域
+    var initialRect: CGRect = .zero
+    
+    lazy var gridLayer: TSGridLayer = {
+        let layer = TSGridLayer()
+        layer.frame = bounds
+        layer.gridColor = .white
+        layer.gridRect = bounds.insetBy(dx: 20, dy: 20)
+        return layer
+    }()
+    
+    lazy var gridMaskLayer: TSGridMaskLayer = {
+        let layer = TSGridMaskLayer()
+        layer.frame = bounds
+        layer.maskColor = .black.withAlphaComponent(0.6)
+        return layer
+    }()
+    
+    
+    //四个角
+    var topLeftCornerView: TSResizeControl!
+    var topRightCornerView: TSResizeControl!
+    var bottomLeftCornerView: TSResizeControl!
+    var bottomRightCornerView: TSResizeControl!
+    //四条边
+    var topEdgeView: TSResizeControl!
+    var leftEdgeView: TSResizeControl!
+    var bottomEdgeView: TSResizeControl!
+    var rightEdgeView: TSResizeControl!
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gridLayer.frame = bounds
+        gridMaskLayer.frame = bounds
+        updateResizeControlFrame()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setGridRect(_ gridRect: CGRect, isMaskLayer: Bool, animated: Bool = false){
+        if !_gridRect.equalTo(gridRect) {
+            _gridRect = gridRect
+            setNeedsLayout()
+            gridLayer.setGridRect(gridRect, animated: animated)
+            if isMaskLayer {
+                gridMaskLayer.setMaskRect(gridRect, animated: animated)
+            }
+        }
+        
+    }
+    
+    private func setupUI(){
+        minGridSize = CGSize.init(width: 60, height: 60)
+        maxGridRect = bounds.insetBy(dx: 20, dy: 20)
+        originalGridSize  = gridRect.size
+        showMaskLayer = true
+        
+        layer.addSublayer(gridMaskLayer)
+        layer.addSublayer(gridLayer)
+        
+        topLeftCornerView = createResizeControl()
+        topRightCornerView = createResizeControl()
+        bottomLeftCornerView = createResizeControl()
+        bottomRightCornerView = createResizeControl()
+        
+        topEdgeView = createResizeControl()
+        leftEdgeView = createResizeControl()
+        bottomEdgeView = createResizeControl()
+        rightEdgeView = createResizeControl()
+    }
+    
+    
+    
+    private func createResizeControl() -> TSResizeControl{
+        let control = TSResizeControl.init(frame: CGRect.init(x: 0, y: 0, width: kTSControlWidth, height: kTSControlWidth))
+        control.delegate = self
+        addSubview(control)
+        control.isUserInteractionEnabled = true
+        return control
+    }
+    
+    private func updateResizeControlFrame(){
+        topLeftCornerView.frame = CGRect.init(origin: CGPoint.init(x: gridRect.minX-topLeftCornerView.bounds.width/2, y: gridRect.minY-topLeftCornerView.bounds.height/2), size: topLeftCornerView.bounds.size)
+        topRightCornerView.frame = CGRect.init(origin: CGPoint.init(x: gridRect.maxX-topRightCornerView.bounds.width/2, y: gridRect.minY-topRightCornerView.bounds.height/2), size: topRightCornerView.bounds.size)
+        bottomLeftCornerView.frame = CGRect.init(origin: CGPoint.init(x: gridRect.minX-bottomLeftCornerView.bounds.width/2, y: gridRect.maxY-bottomLeftCornerView.bounds.height/2), size: bottomLeftCornerView.bounds.size)
+        bottomRightCornerView.frame = CGRect.init(origin: CGPoint.init(x: gridRect.maxX-bottomRightCornerView.bounds.width/2, y: gridRect.maxY-bottomRightCornerView.bounds.height/2), size: bottomRightCornerView.bounds.size)
+        
+        
+        topEdgeView.frame = CGRect.init(x: topLeftCornerView.frame.maxX, y: gridRect.minY-topEdgeView.bounds.height/2, width: topRightCornerView.frame.minX-topLeftCornerView.frame.maxX, height: topEdgeView.bounds.height)
+        leftEdgeView.frame = CGRect.init(x: gridRect.minX-leftEdgeView.bounds.width/2, y: topLeftCornerView.frame.maxY, width:leftEdgeView.bounds.width, height: bottomLeftCornerView.frame.minY-topLeftCornerView.frame.maxY)
+        bottomEdgeView.frame = CGRect.init(x: bottomLeftCornerView.frame.maxX, y: gridRect.maxY-bottomEdgeView.bounds.height/2, width: bottomRightCornerView.frame.minX-bottomLeftCornerView.frame.maxX, height: bottomEdgeView.bounds.height)
+        rightEdgeView.frame = CGRect.init(x: gridRect.maxX-rightEdgeView.bounds.width/2, y: topRightCornerView.frame.maxY, width:rightEdgeView.bounds.width, height: bottomRightCornerView.frame.minY-topRightCornerView.frame.maxY)
+    }
+    
+    //返回正在调整网格大小时的网格区域
+    private func cropRectMake(with resizeControlView: TSResizeControl) -> CGRect{
+        var rect = gridRect
+        if resizeControlView == topEdgeView {
+            rect = CGRect.init(x: initialRect.minX, y: initialRect.minY+resizeControlView.translation.y, width: initialRect.width, height: initialRect.height-resizeControlView.translation.y)
+        }else if resizeControlView == leftEdgeView{
+            rect = CGRect.init(x: initialRect.minX+resizeControlView.translation.x, y: initialRect.minY, width: initialRect.width-resizeControlView.translation.x, height: initialRect.height)
+        }else if resizeControlView == bottomEdgeView{
+            rect = CGRect.init(x: initialRect.minX, y: initialRect.minY, width: initialRect.width, height: initialRect.height+resizeControlView.translation.y)
+        }else if resizeControlView == rightEdgeView{
+            rect = CGRect.init(x: initialRect.minX, y: initialRect.minY, width: initialRect.width+resizeControlView.translation.x, height: initialRect.height)
+        }else if resizeControlView == topLeftCornerView{
+            rect = CGRect.init(x: initialRect.minX+resizeControlView.translation.x, y: initialRect.minY+resizeControlView.translation.y, width: initialRect.width-resizeControlView.translation.x, height: initialRect.height-resizeControlView.translation.y)
+        }else if resizeControlView == topRightCornerView{
+            rect = CGRect.init(x: initialRect.minX, y: initialRect.minY+resizeControlView.translation.y, width: initialRect.width+resizeControlView.translation.x, height: initialRect.height-resizeControlView.translation.y)
+        }else if resizeControlView == bottomLeftCornerView{
+            rect = CGRect.init(x: initialRect.minX+resizeControlView.translation.x, y: initialRect.minY, width: initialRect.width-resizeControlView.translation.x, height: initialRect.height+resizeControlView.translation.y)
+        }else if resizeControlView == bottomRightCornerView{
+            rect = CGRect.init(x: initialRect.minX, y: initialRect.minY, width: initialRect.width+resizeControlView.translation.x, height: initialRect.height+resizeControlView.translation.y)
+        }
+        return rect
+    }
+}
 
+
+extension TSGridView: TSResizeControlDelegate{
+    func resizeControlDidBeginResizing(_ resizeControl: TSResizeControl) {
+        initialRect = gridRect
+        showMaskLayer = false
+    }
+    
+    func resizeControlDidResizing(_ resizeControl: TSResizeControl) {
+        let rect = cropRectMake(with: resizeControl)
+        setGridRect(rect, isMaskLayer: false)
+    }
+    
+    func resizeControlDidEndResizing(_ resizeControl: TSResizeControl) {
+        showMaskLayer = true
+    }
+    
 }
