@@ -71,9 +71,9 @@ class TSCameraViewController: UIViewController {
         cameraContentView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(focus(_:))))
         cameraContentView.addGestureRecognizer(UIPinchGestureRecognizer.init(target: self, action: #selector(pinch(_:))))
         controlView = TSCameraControl.init(frame: CGRect(x: 0, y: view.frame.height-18-150, width: self.view.ts.width, height: 150))
-        controlView.delegate = self
-        controlView.videoLength = self.videoMaxLength
-        controlView.inputType = self.inputType
+//        controlView.delegate = self
+//        controlView.videoLength = self.videoMaxLength
+//        controlView.inputType = self.inputType
         view.addSubview(controlView)
         
         let label = UILabel()

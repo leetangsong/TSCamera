@@ -182,32 +182,32 @@ public class TSCameraManager: NSObject {
     
     // 拍照调用方法
     public func pickImage(complete: @escaping (String) -> ()) {
-        currentUrl = TSCameraTools.createFileUrl("jpg")
-        let imageOrientation = currentOrientation
-        let videoConnection = stillImageOutput.connection(with: .video)
-        
-        stillImageOutput.captureStillImageAsynchronously(from: videoConnection!, completionHandler: { [weak self] (buffer, error) in
-            
-            guard let self = self,
-                let buffer = buffer,
-                let imageData = AVCaptureStillImageOutput
-                    .jpegStillImageNSDataRepresentation(buffer),
-                let originImage = UIImage.init(data: imageData)
-                else {
-                    return
-            }
-            let rotete = self.imageRotateWith(imageOrientation)
-            let newImage = TSCameraTools.rotateImage(originImage, withAngle: rotete)
-            
-            try? newImage.jpegData(compressionQuality: 1)?.write(to: URL.init(fileURLWithPath: self.currentUrl))
-            complete(self.currentUrl)
-        })
+//        currentUrl = TSCameraTools.createFileUrl("jpg")
+//        let imageOrientation = currentOrientation
+//        let videoConnection = stillImageOutput.connection(with: .video)
+//
+//        stillImageOutput.captureStillImageAsynchronously(from: videoConnection!, completionHandler: { [weak self] (buffer, error) in
+//
+//            guard let self = self,
+//                let buffer = buffer,
+//                let imageData = AVCaptureStillImageOutput
+//                    .jpegStillImageNSDataRepresentation(buffer),
+//                let originImage = UIImage.init(data: imageData)
+//                else {
+//                    return
+//            }
+//            let rotete = self.imageRotateWith(imageOrientation)
+//            let newImage = TSCameraTools.rotateImage(originImage, withAngle: rotete)
+//
+//            try? newImage.jpegData(compressionQuality: 1)?.write(to: URL.init(fileURLWithPath: self.currentUrl))
+//            complete(self.currentUrl)
+//        })
     }
     ///录制视频
     public func startRecordingVideo() {
-        currentUrl = TSCameraTools.createFileUrl("MOV")
-        initializeVideoWriter()
-        isRecording = true
+//        currentUrl = TSCameraTools.createFileUrl("MOV")
+//        initializeVideoWriter()
+//        isRecording = true
     }
     
     func endRecordingVideo(complete: @escaping (String) -> ()) {

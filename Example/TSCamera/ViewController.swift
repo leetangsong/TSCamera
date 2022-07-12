@@ -27,7 +27,9 @@ class ViewController: UIViewController {
        
     }
     @objc func click(){
-        navigationController?.pushViewController(TSImageEditViewController(), animated: true)
+        let vc = TSImageClipController()
+        vc.image = UIImage.init(named: "test")
+        navigationController?.pushViewController(vc, animated: false)
 //        self.present(TSCameraViewController(), animated: true, completion: nil)
     }
     override func didReceiveMemoryWarning() {

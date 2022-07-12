@@ -25,22 +25,20 @@ class TSGridMaskLayer: CAShapeLayer{
         fillRule = .evenOdd
         contentsScale = UIScreen.main.scale
     }
-    
-    func setMaskRect(_ maskRect: CGRect, animated: Bool){
+    override init(layer: Any) {
+        super.init(layer: layer)
+    }
+    func setMaskRect(_ maskRect: CGRect, animated: Bool, isHidden: Bool = true){
         let path = CGMutablePath()
         path.addRect(bounds)
         path.addRect(maskRect)
-        removeAnimation(forKey: "MaskLayer_opacityAnimation")
         if animated {
-            let animation = CABasicAnimation.init(keyPath: "opacity")
-            animation.duration = 0.25
-            animation.fromValue = 1
-            animation.toValue = 0
-            self.path = path
-            add(animation, forKey: "MaskLayer_opacityAnimation")
-        }else{
-            self.path = path
+            opacity = isHidden ? 1:0
+            UIView.animate(withDuration: 0.25) {
+                self.opacity = isHidden ? 0:1
+            }
         }
+        self.path = path
         
     }
     
@@ -277,11 +275,7 @@ class TSGridView: UIView {
     var showMaskLayer: Bool = true{
         didSet{
             if oldValue != showMaskLayer {
-                if showMaskLayer {
-                    gridMaskLayer.setMaskRect(gridRect, animated: true)
-                }else{
-                    gridMaskLayer.setMaskRect(gridMaskLayer.bounds, animated: true)
-                }
+                gridMaskLayer.setMaskRect(gridRect, animated: true, isHidden: !showMaskLayer)
             }
         }
     }
@@ -411,6 +405,31 @@ class TSGridView: UIView {
         }else if resizeControlView == bottomRightCornerView{
             rect = CGRect.init(x: initialRect.minX, y: initialRect.minY, width: initialRect.width+resizeControlView.translation.x, height: initialRect.height+resizeControlView.translation.y)
         }
+        
+        // 限制x/y 超出左上角 最大限度
+        if ceil(rect.origin.x) < ceil(maxGridRect.minX) {
+            rect.origin.x = maxGridRect.origin.x
+            rect.size.width = initialRect.maxX - maxGridRect.origin.x
+        }
+        if ceil(rect.origin.y) < ceil(maxGridRect.minY) {
+            rect.origin.y = maxGridRect.origin.y
+            rect.size.height = initialRect.maxY - maxGridRect.origin.y
+        }
+        if ceil(rect.origin.x+rect.size.width)>maxGridRect.maxX {
+            rect.size.width = maxGridRect.maxX-rect.minX
+        }
+        if ceil(rect.origin.y+rect.size.height)>maxGridRect.maxY {
+            rect.size.height = maxGridRect.maxY-rect.minY
+        }
+        
+        ///限制最小
+        
+        if ceil(rect.width) <= ceil(minGridSize.width) {
+            rect.origin.x = initialRect.maxX-minGridSize.width
+            rect.size.width = initialRect.maxX - maxGridRect.origin.x
+        }
+        
+        
         return rect
     }
 }
@@ -424,7 +443,7 @@ extension TSGridView: TSResizeControlDelegate{
     
     func resizeControlDidResizing(_ resizeControl: TSResizeControl) {
         let rect = cropRectMake(with: resizeControl)
-        setGridRect(rect, isMaskLayer: false)
+        setGridRect(rect, isMaskLayer: true)
     }
     
     func resizeControlDidEndResizing(_ resizeControl: TSResizeControl) {
